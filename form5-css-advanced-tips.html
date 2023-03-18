@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style>
+			a {
+				color: white;
+				background-color: tomato;
+				text-decoration: none;
+				padding: 3px 5px;
+				border-radius: 5px;
+				font-size: 55px;
+				transition: all 500ms ease-in-out; /* background-color 1s ease-in-out, color 0.5s ease-in-out; */
+			}
+			a:hover {
+				border-radius: 15px;
+				color: tomato;
+				background-color: wheat;
+			}
+			img {
+				border: 5px solid black;
+				border-radius: 50%;
+				transition: transform 0.5s ease-in-out;
+				/* transform: rotateY(30deg) rotateX(20deg) rotateZ(10deg); */
+				animation: superCoin 2s ease-in-out /*infinite*/;
+			}
+			img:hover {
+				transform: rotateZ(90deg);
+			}
+			@keyframes superCoin {
+				/* from {
+					transform: rotateX(0);
+				}
+				to {
+					transform: rotateX(360deg) translateX(180px);
+				}*/
+				0% {
+					transform: rotateY(0);
+				}
+				50% {
+					transform: rotateY(180deg) translateY(100px) scale(2);
+					border-radius: 20px;
+					border-color: tomato;
+				}
+				100% {
+					transform: rotateY(0) translateY(0);
+				}
+			}
+			.block {
+				height: 10vh;
+			}
+			#web {
+				background-color: teal;
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS - Advanced</h1>
+		<h3>Transitions</h3>
+		<p>
+			트랜지션 애니메이션을 만든다. 호버 등에 쓰면 안 되고, element(요소)에다 써야 한다.<br />
+			주로 ease-in-out을 이용한다. cubiz-bezier를 이용하면 나만의 커브(속도 조절)를 설정하여 사용할 수 있다.<br />
+			<a href="https://matthewlein.com/tools/ceaser">Transition ceaser</a>
+		</p>
+		<br />
+		<h3>Transformations</h3>
+		<p>
+			트랜스폼을 이용한다. hover에 쓰면, 해당 효과가 나타나며, 트랜지션과도 함께 쓸 수 있다.(트랜지션은 본 태그)<br />
+			rotate(숫자deg)를 이용하여 XYZ축을 deg(각도) 단위로 변경 가능, skew(숫자deg)를 이용하면 기울기가 가능하다.<br />
+			scale(1_디폴트)값을 이용하여 크기 조정도 가능하다.<br />
+			이외에도 matrix 등 여러 가지 있음. 항상 트랜지션과 함께 쓰는 것을 추천. 검색할 땐 <strong>css transform mdn</strong>
+			<img src="m.svg" />
+		</p>
+		<br />
+		<h3>Animations</h3>
+		<p>
+			말 그대로 애니메이션이다. 키프레임부터. 마우스 호버링 없이 사이트 접속하자마자 발생하는 애니메이션이다.<br />
+			@keyframes를 이용해 애니메이션 변수를 만들고 트랜스폼 값을 넣는다. from {} to {}로 넣거나 0%{} 50%{} 100%{} 등으로 나눠서 트랜스폼을 넣는다.<br />
+			적용하고 싶은 곳에 animation: 애니메이션 변수를 기입한다(트랜지션처럼). 트랜지션 값 맨뒤에 infinite를 넣으면 무한반복한다.<br />
+			검색어는 [CSS animations], <a href="https://animista.net/">Animista</a><br />
+			애니메이션이나 트랜스폼이나 애프터이펙트와 효과가 동일한 듯, opacity scale 등
+		</p>
+		<div class="block"></div>
+		<h3>Responsive website - Media queries</h3>
+		<p>반응형 웹사이트.</p>
+		<a href="form6-css-responsive-website.html">form6</a>
+	</body>
+</html>

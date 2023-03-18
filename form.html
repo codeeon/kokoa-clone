@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the first practice - form tag</title>
+</head>
+<body>
+    <form>
+        <label for = "Profile">Profile Photo</label> <!-- label은 for을 가지며, input에서의 id와 동일한 경우 사용 가능 -->
+        <input id = "Profile" type="file" accept="image/*,.xsl">
+        <label for = "first-name">First Name</label>
+        <input id = "first-name" required minlength="2" placeholder="Name" type="text">
+        
+        <input disabled placeholder="Last Name" type="text">
+        <input placeholder="Username" minlength="2" type="text">
+        <input required minlength="8" placeholder="Password" type="password">
+        <input type="submit" value="Create Account"> <!-- submit(전송) 대신 button도 형태는 그럴싸하다 -->
+        <input type="file" accept=".hwp,.pdf">
+        
+    </form>
+
+    <!--기본적인 HTML 형식--> <tagname attribute name="attribute value">text</tagname>
+
+</body>
+</html>
