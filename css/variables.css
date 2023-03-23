@@ -1,0 +1,5 @@
+:root {
+  --yellow: #fae100;
+  --ocean: cornflowerblue;
+}
+/* var, Don't forget @IMPORT, using by var(--yellow);

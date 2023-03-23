@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to OceanChat</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <!-- 아래 클래스, BEM(CSS-Block, Element, Modifier)의 기본 구성 방식(클래스), .header__navigation--navi-text {color: red;} -->
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fas fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">
+        <span>17:27</span>
+      </div>
+      <div class="status-bar__column">
+        <span>77%</span>
+        <i class="fas fa-battery-three-quarters fa-lg"></i>
+        <!-- fa-lg는 아이콘의 크기를 라지로, 사이트 참고하면 2x 등 다양히 있음 -->
+        <i class="fas fa-bolt"></i>
+      </div>
+    </div>
+    <header class="welcome-header">
+      <h1 class="welcome-header__title">Welcome to OceanChat</h1>
+      <p class="welcome-header__text">If you have a Ocean Account,</p>
+      <p class="welcome-header__text">
+        log in with your email or phone number.
+      </p>
+    </header>
+    <form action="friends.html" method="get" class="login-form">
+      <!-- form의 매우 중요한 2가지 속성(attribute) action, method(post, get)
+      action은 어떤 페이지로 data를 보낼 건지 지정할 수 있다.
+      method는 post와 get, 두 가지로 나뉘는데,
+        post는 백엔드 서버에 정보를 전송하는 방식이고,
+        get은 보안에 취약해서 id나 pw 등 개인정보를 get으로 보내서는 안 된다. -->
+      <input
+        required
+        name="username"
+        type="text"
+        placeholder="Email or phone number"
+      />
+      <input required name="password" type="password" placeholder="Password" />
+      <input type="submit" value="Log In" />
+    </form>
+    <form class="login-form" action="#" method="get" class="#">
+      <input type="submit" id="sign-up" value="Sign Up" />
+    </form>
+    <form class="login-form" action="#" method="get" class="#">
+      <a href="#">Find Ocean Account or Password</a>
+    </form>
+    <script
+      src="https://kit.fontawesome.com/41bc1c3a74.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
