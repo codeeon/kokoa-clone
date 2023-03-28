@@ -1,5 +1,7 @@
 :root {
   --yellow: #fae100;
   --ocean: cornflowerblue;
+  --horizontal-space: 22px;
+  --main-border: 1px solid rgba(0, 0, 0, 0.3)
 }
 /* var, Don't forget @IMPORT, using by var(--yellow);

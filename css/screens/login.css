@@ -56,5 +56,10 @@
 }
 
 #sign-up {
-  background-color: var(--yellow);
+  background-color: inherit;
+  margin: 0 40%;
+  padding: 10px 0;
+}
+#find {
+  padding-top: 30px;
 }

@@ -1,0 +1,29 @@
+.screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px var(--horizontal-space); /* 강의에선 패딩 상하값이 없는데 나는 넣었다, 어디서 차이가 난 걸까? - 포지션 앱솔루트가 하나 더 들어간 건가? */
+  margin-bottom: 15px;
+}
+
+.screen-header__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.screen-header__icons span {
+  margin-left: 22px;
+}
+
+.screen-header__notification {
+  background-color: tomato;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  position: absolute;
+  top: 48px;
+  right: 16px;
+}
