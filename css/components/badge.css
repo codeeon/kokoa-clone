@@ -11,13 +11,15 @@
 }
 
 .exclamation-mark {
+  border: 2px solid tomato;
   color: tomato;
-  width: 26px;
-  height: 26px;
-  border-radius: 13px;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: tomato;
+  background-color: none;
   font-weight: 600;
+  margin-left: 5px;
 }
