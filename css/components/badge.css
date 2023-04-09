@@ -9,3 +9,15 @@
   color: white;
   font-weight: 600;
 }
+
+.exclamation-mark {
+  color: tomato;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: tomato;
+  font-weight: 600;
+}
