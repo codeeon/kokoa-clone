@@ -1,0 +1,24 @@
+.chat-screen {
+  background-color: #abc1d1;
+  height: 200vh; /* 상태창은 물론, 헤더가 포지션 픽스트가 잘 이루어졌는지 확인하기 위해 길이를 조절함. */
+}
+
+.chat-screen .alt-header {
+  position: fixed; /* position: fixed;와 width: 100%;와 box-sizing: border-box;는 세트다. position: absolute;(부모)와 position: relative;(자식)이 세트인 것처럼 */
+  width: 100%;
+  box-sizing: border-box; /* 포지션 픽스트의 삼종세트를 기억하자. */
+  top: 0; /* 상단 또는 최상단 고정이라면, 마진 패딩을 별도로 두고서, top: 0;을 같이 써야 한다. 사실 상 3+1 같은 존재(위치 잡는 것) */
+}
+
+.chat-screen .status-bar {
+  z-index: 2; /* z-index는 레이어 위치(=순서. 기본 값 = 0, 숫자가 낮을수록 먼저 시작한 것), z-index: 2;를 이용하여 챗 스크린 스태이터스 바를 0보다 위로 두면, 알트 헤더의 배경색에 가려지지 않는다. -- 포지션 앱솔루트나 포지션 픽스트에만 적용(안 그러면 겹칠 일이 없어서 쓸 일이 없음) */
+}
+
+.chat-screen .status-bar,
+.chat-screen .alt-header {
+  background-color: #abc1d1;
+}
+
+.main-chat {
+  margin-top: 150px;
+}

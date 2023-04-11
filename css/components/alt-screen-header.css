@@ -1,0 +1,32 @@
+.alt-header {
+  padding: 40px var(--horizontal-space) 40px var(--horizontal-space);
+  /* margin-bottom: 15px; */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* space-between의 경우, 글자 수까지 체크해서 정 중앙에 오지 않을 수 있다, 하지만 center로 정렬 후, 자식 태그 셋 중 양 끝의 마진을 각자 방향으로 오토로 두면 글자 수와 관계 없이 좌 중앙 우 정렬이 된다고 한다. 음... 마진 오토는 뭐지? */
+}
+
+.alt-header__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.alt-header__column {
+  width: 33%; /* column 전체에 width를 분할 원하는 만큼 (3등분이니까 33%)퍼센티지로 걸고, 좌측에 margin-right: auto; 걸고, 중앙인 2번째(3등분이니까)에 text-align: center; 걸고(텍스트니까 텍스트 얼라인), 우측인 세 번째 자식태그 요소에 margin-left: auto;와 함께 display:flex;와 justify-content: flex-end;를 걸면 완벽히 제자리를 찾는다. 매우 중요한 치트키이다. */
+}
+
+.alt-header__column:first-child {
+  margin-right: auto;
+}
+.alt-header__column:nth-child(2) {
+  text-align: center;
+}
+.alt-header__column:last-child {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end; /* 나중에 여기저기 다 적용해보면 좋겠다. */
+}
+
+.alt-header__column span:last-child {
+  margin-left: 20px;
+}
