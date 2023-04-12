@@ -8,6 +8,7 @@
   width: 100%;
   box-sizing: border-box; /* 포지션 픽스트의 삼종세트를 기억하자. */
   top: 0; /* 상단 또는 최상단 고정이라면, 마진 패딩을 별도로 두고서, top: 0;을 같이 써야 한다. 사실 상 3+1 같은 존재(위치 잡는 것) */
+  z-index: 1;
 }
 
 .chat-screen .status-bar {
@@ -21,4 +22,148 @@
 
 .main-chat {
   margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat__timestamp {
+  color: white;
+  font-size: 18px;
+  background-color: #92a4b2;
+  padding: 15px;
+  border-radius: 30px;
+  margin-bottom: 25px;
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.message-row img {
+  width: 55px;
+  height: 55px;
+  border-radius: 35%;
+  margin-right: 15px;
+}
+
+.message__author {
+  opacity: 0.8;
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.message__info {
+  display: flex;
+  align-items: flex-end;
+}
+
+.message__bubble {
+  background-color: white;
+  padding: 20px;
+  border-radius: 25px;
+  border-top-left-radius: 0%;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.message__time {
+  opacity: 0.8;
+  font-size: 17px;
+}
+
+.message-row--own {
+  justify-content: flex-end;
+}
+
+.message-row--own .message__bubble {
+  background-color: var(
+    --ocean
+  ); /* 색상 변수를 --색상 이런 식으로 표기하는 이유는, BEM의 약속과 같다고 볼 수 있다 */
+  border-top-right-radius: 0px;
+  border-top-left-radius: 25px;
+  margin-right: 0px;
+  margin-left: 10px;
+}
+
+/* 
+.message-row--own .message__bubble {
+  order: 1; 
+}
+.message-row--own .message__time {
+  order: 0;
+}
+*/
+/* order는 display: flex; 처리된 태그의 자식 태그에만 적용된다. 아래는 위의 코드와 동일한 의미를 갖는 코드 */
+.message-row--own .message__info {
+  flex-direction: row-reverse; /* HTML의 선택자 자식 태그들의 위치를 거꾸로 한다. HTML을 건드리지 않고서. 위와 마찬가지로 info가 flex; 이기에 그 자식 태그들의 로우리버스가 가능 */
+}
+
+.reply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  align-items: center;
+}
+
+.reply .reply__column:first-child {
+  width: 10%;
+}
+.reply .reply__column:last-child {
+  width: 90%;
+  position: relative;
+}
+
+.reply i {
+  opacity: 0.5;
+  font-size: 26px;
+}
+
+.reply input {
+  padding: 14px 0;
+  width: 100%;
+  border: var(--main-border);
+  border-radius: 20px;
+}
+.reply input::placeholder {
+  padding: 0 15px;
+  font-size: 15px;
+}
+
+.reply__column span {
+  position: absolute;
+  top: 21px;
+}
+
+.reply__column:last-child > i, /* 화살표(손자 제외 자식만 해당)를 주는 이유는, 손자 격인 화살표에 적용하고 싶지 않은 부분이기 때문 */
+.reply__column:last-child button {
+  position: absolute;
+  right: 2px;
+  top: 4px;
+}
+.reply__column:last-child > i {
+  right: 60px;
+  top: 21px;
+}
+.reply__column button {
+  background-color: var(--ocean);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.reply__column button i {
+  opacity: 1;
+}
+.reply__column button:focus,
+.reply__column button:active {
+  outline: none;
 }
