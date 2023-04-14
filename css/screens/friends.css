@@ -29,3 +29,28 @@
   justify-content: space-between;
   color: rgba(0, 0, 0, 0.5);
 }
+
+@keyframes hideSplashScreen {
+  from {
+    /* from to 말고 0% 50% 100% 등 가능 */
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden; /* 이 부분을 빼면 투명하기만 할 뿐 맨위에 씌어져 있어서 다른 클릭이 불가 */
+  }
+}
+
+#splash-screen {
+  background-color: var(--ocean);
+  position: absolute;
+  height: 100vh; /* vh와 vw로 스크린 사이즈 채우기(body에 대한 비율) */
+  width: 100vw;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 132px;
+  animation: hideSplashScreen 0.3s ease-in-out forwards; /* forwards는 애니메이션의 마지막 키프레임을 유지하는 의미를 가진다. */
+  animation-delay: 1.5s;
+}

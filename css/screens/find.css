@@ -85,6 +85,27 @@
   right: 10px;
   font-size: 12px;
 }
+
 .open-post__heart-count span {
   margin-left: 5px;
+}
+
+@keyframes heartBeat {
+  0% {
+    color: white;
+    transform: none;
+  }
+  50% {
+    color: tomato;
+    transform: scale(1.5);
+  }
+  100% {
+    color: white;
+    transform: none;
+  }
+}
+
+.open-post__heart-count:hover i {
+  will-change: transform; /* 바뀔 거라고 알려주는 것, (그래픽카드 가속을 통해)좀 더 매끄럽게 애니메이션이 진행되는 듯하다. - 프레임 수를 더 쪼개서 늘리는 느낌 */
+  animation: heartBeat 1s linear infinite;
 }
