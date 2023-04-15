@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../0-kokoa-clone-2020/screenshots"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "kokoa-clone"
+  }
+}
